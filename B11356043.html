@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>環保餐具介紹</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: #2d6a4f;
+            color: #fff;
+            padding: 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .menu {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .menu a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        main {
+            padding: 2rem 0;
+        }
+        
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .card {
+            background: #f4f4f4;
+            padding: 1rem;
+            flex: 1 1 calc(33.333% - 20px);
+            border-radius: 8px;
+        }
+        
+        footer {
+            background: #1b4332;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                background: #3a5a40;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                padding: 1rem;
+                border-radius: 8px;
+            }
+            .menu a {
+                margin: 0.5rem 0;
+            }
+            .menu.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">環保餐具</div>
+                <div class="menu-toggle" id="toggle">&#9776;</div>
+                <div class="menu" id="menu">
+                    <a href="#">首頁</a>
+                    <a href="#bamboo">竹筷子</a>
+                    <a href="#plastic">塑膠湯匙</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>介紹：竹筷子與塑膠湯匙</h1>
+        <p>探索常見的一次性與可重複使用餐具，了解它們的材質、用途與環保影響。</p>
+
+        <div class="grid">
+            <div class="card" id="bamboo">
+                <h2>竹筷子</h2>
+                <p>
+                    竹筷子輕巧、可生物分解，是一種環保選擇。可用於日常餐飲，亦適合野餐或便當。 竹材來源自然、可再生，加工簡單，適合大量生產並減少對塑膠依賴。
+                </p>
+            </div>
+            <div class="card" id="plastic">
+                <h2>塑膠湯匙</h2>
+                <p>
+                    塑膠湯匙廣泛用於外帶與即食餐點，但因難以分解，對環境造成長遠負擔。 大部分為一次性使用，回收困難且容易進入自然環境中，造成污染。
+                </p>
+            </div>
+            <div class="card">
+                <h2>替代方案</h2>
+                <p>
+                    建議選用可重複使用的金屬或竹製湯匙與筷子，攜帶方便且耐用，能有效減少一次性塑膠廢棄物的產生。
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 環保餐具. 共同守護地球。</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('toggle');
+        const menu = document.getElementById('menu');
+
+        toggleBtn.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
